@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre mí — Alberto Bernal</title>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/bootstrap.bundle.js" defer></script>
+  <script src="js/js.js" defer></script>
+  <link rel="icon" href="img/faviconact.webp" type="image/x-icon" />
+</head>
+<body data-bs-theme="dark">
+
+  <!-- NAVBAR (coherente con el index) -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-blur sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Inicio">
+        <img src="img/faviconact.webp" alt="" width="28" height="28" class="rounded-2">
+        <span class="fw-semibold">Alberto Bernal</span>
+      </a>
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-nav="index">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html" data-nav="gallery">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutme.html" data-nav="aboutme">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html" data-nav="contact">Contacto</a></li>
+        </ul>
+        <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
+          <a href="contact.html" class="btn btn-primary btn-cta">Hablemos</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / CABECERA -->
+  <header class="about-hero py-5 border-bottom">
+    <div class="container">
+      <div class="row align-items-center g-4">
+      <div class="col-12 col-md-4 text-center">
+        <div class="rounded-circle overflow-hidden mx-auto shadow-lg"
+            style="width:250px;height:250px; position:relative;">
+          <img
+            src="img/fotocv.JPEG"
+            alt="Foto de Alberto Bernal"
+            style="
+              position:absolute;                /* control total del encuadre */
+              left:50%; top:10%;                /* mismo punto que usabas (50% 10%) */
+              width:200%; height:200%;          /* base grande para que al reducir siga cubriendo */
+              max-width:none;                   /* evita límites de Bootstrap */
+              object-fit:cover;
+              transform: translate(-50%,-10%) scale(.50);  /* zoom-out real */
+              transform-origin: 50% 10%;
+              display:block;
+            ">
+        </div>
+      </div>
+        <div class="col-12 col-md-8">
+          <h1 class="display-5 fw-bold mb-2">Sobre mí</h1>
+          <p class="lead text-light-emphasis mb-4">
+            Soy <strong>Desarrollador Web</strong> especializado en <strong>APIs y backend</strong> con Java y SQL, orientado a
+            código escalable, mantenible y limpio (principios <em>SOLID</em>). Me encanta construir productos robustos que la gente disfrute usando.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-light" href="img/CVABM.pdf" download="CV_AlbertoBernal.pdf">Descargar CV</a>
+            <a class="btn btn-outline-light" href="contact.html">Contactar</a>
+            <a class="btn btn-outline-light" href="https://www.linkedin.com/in/alberto-bernal-mej%C3%ADas-b85903213/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-outline-light" href="https://github.com/AlbertoBernal02" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="py-5">
+    <div class="container">
+
+      <!-- Datos personales + Bio -->
+      <div class="row g-4">
+        <div class="col-12 col-lg-5">
+          <div class="card bg-dark border-0 tech-card h-100">
+            <div class="card-body">
+              <h2 class="h4 mb-3">Datos personales</h2>
+              <dl class="dl-grid">
+                <dt>Nombre</dt>     <dd>Alberto Bernal Mejías</dd>
+                <dt>Título</dt>     <dd>Desarrollador Web</dd>
+                <dt>Teléfono</dt>   <dd><a href="tel:+34692329148">+34 692 329 148</a></dd>
+                <dt>Email</dt>      <dd><a href="mailto:abernalmejias@hotmail.com">abernalmejias@hotmail.com</a></dd>
+                <dt>Website</dt>    <dd><a href="https://www.linkedin.com/in/alberto-bernal-mej%C3%ADas-b85903213/" target="_blank" rel="noopener">linkedin.com/in/alberto-bernal-mejias</a></dd>
+                <dt>Ciudad</dt>     <dd>Alcalá de Guadaíra, Sevilla</dd>
+                <dt>País</dt>       <dd>España</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-7">
+          <div class="card bg-dark border-0 tech-card h-100">
+            <div class="card-body">
+              <h2 class="h4 mb-3">Quién soy</h2>
+              <p class="mb-0 text-light-emphasis">
+                Técnico Superior en Desarrollo de Aplicaciones Web. Trabajo con <strong>PHP (Symfony/Laravel)</strong>, <strong>Java</strong>, <strong>SQL</strong>, <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>.
+                Me enfoco en <strong>diseño e implementación de APIs REST</strong>, <strong>servicios backend</strong> y <strong>optimización de base de datos</strong> (Oracle, MySQL).
+                Disfruto crear soluciones escalables y mantenibles aplicando <em>SOLID</em>, con especial cuidado en rendimiento y DX.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habilidades (badges) -->
+      <section class="mt-5">
+        <h2 class="h4 mb-3">Experiencia y habilidades</h2>
+
+        <div class="row g-3 row-cols-1 row-cols-md-2">
+          <!-- PHP · Symfony/Laravel -->
+          <div class="col">
+            <div class="card bg-dark border-0 tech-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h3 class="h6 mb-0">PHP · Symfony / Laravel</h3>
+                  <span class="chip chip-strong">Avanzado</span>
+                </div>
+                <p class="text-light-emphasis mb-2">APIs REST, controladores, middleware, autenticación, servicios, colas y arquitectura limpia.</p>
+                <div class="progress progress-modern" role="progressbar" aria-label="Nivel PHP Symfony/Laravel" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" style="width: 85%">85%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Java -->
+          <div class="col">
+            <div class="card bg-dark border-0 tech-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h3 class="h6 mb-0">Java</h3>
+                  <span class="chip chip-strong">Avanzado</span>
+                </div>
+                <p class="text-light-emphasis mb-2">Aplicaciones empresariales robustas y escalables.</p>
+                <div class="progress progress-modern" role="progressbar" aria-label="Nivel Java" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" style="width: 90%">90%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SQL -->
+          <div class="col">
+            <div class="card bg-dark border-0 tech-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h3 class="h6 mb-0">SQL · Oracle / MySQL</h3>
+                  <span class="chip">Intermedio</span>
+                </div>
+                <p class="text-light-emphasis mb-2">Modelo de datos, PL/SQL/funciones, tuning, índices y seguridad.</p>
+                <div class="progress progress-modern" role="progressbar" aria-label="Nivel SQL" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" style="width: 70%">70%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML -->
+          <div class="col">
+            <div class="card bg-dark border-0 tech-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h3 class="h6 mb-0">HTML</h3>
+                  <span class="chip chip-strong">Avanzado</span>
+                </div>
+                <p class="text-light-emphasis mb-2">Semántica, accesibilidad y buenas prácticas.</p>
+                <div class="progress progress-modern" role="progressbar" aria-label="Nivel HTML" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" style="width: 85%">85%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CSS -->
+          <div class="col">
+            <div class="card bg-dark border-0 tech-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h3 class="h6 mb-0">CSS · Bootstrap</h3>
+                  <span class="chip">Intermedio</span>
+                </div>
+                <p class="text-light-emphasis mb-2">UI responsivas, utilidades y componentes reutilizables.</p>
+                <div class="progress progress-modern" role="progressbar" aria-label="Nivel CSS" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" style="width: 65%">65%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="col">
+            <div class="card bg-dark border-0 tech-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h3 class="h6 mb-0">JavaScript</h3>
+                  <span class="chip chip-strong">Avanzado</span>
+                </div>
+                <p class="text-light-emphasis mb-2">Interacciones dinámicas, DX y componentes.</p>
+                <div class="progress progress-modern" role="progressbar" aria-label="Nivel JavaScript" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" style="width: 60%">60%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+ <!-- Stack & forma de trabajo -->
+<section class="mt-5">
+  <h2 class="h4 mb-3">Stack & forma de trabajo</h2>
+  <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3">
+
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Backend</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">PHP</span><span class="chip chip-strong">Symfony</span><span class="chip chip-strong">Laravel</span><span class="chip">Java</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Arquitectura por capas (controllers, services, repos, DTOs).</li>
+            <li>Patrones (DI, Strategy, Factory), middlewares y eventos.</li>
+            <li>Servicios REST, paginación, validaciones y manejo de errores.</li>
+            <li>Tareas asíncronas/colas y jobs programados.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Frontend & UX</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">Bootstrap 5</span><span class="chip">DataTables</span><span class="chip">Select2</span><span class="chip">JS</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>UI responsivas, accesibles (ARIA) y consistentes.</li>
+            <li>Componentes reutilizables, modales y formularios “floating”.</li>
+            <li>Fetch API, control de estado ligero y toasts/notificaciones.</li>
+            <li>Buenas prácticas de rendimiento (lazy, minificación, cache).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Datos & BBDD</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">MySQL</span><span class="chip">Oracle</span><span class="chip">Eloquent</span><span class="chip">Doctrine/DBAL</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Modelado relacional, migraciones y seeds.</li>
+            <li>Consultas optimizadas, índices y planes de ejecución.</li>
+            <li>PL/SQL (packages, vistas) cuando aplica.</li>
+            <li>ETL ligero y reporting.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">DevOps & despliegue</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Vite/Encore</span><span class="chip">npm scripts</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>CI/CD básico, builds reproducibles y entornos.</li>
+            <li>Versionado Git y flujos de ramas (PRs, code review).</li>
+            <li>Variables de entorno y secretos.</li>
+            <li>Monitoreo y logs centrados (cuando procede).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Calidad & testing</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip">PHPUnit/Pest</span><span class="chip">JUnit</span><span class="chip">ESLint</span><span class="chip">PHPCS</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Pruebas unitarias y de integración.</li>
+            <li>Validación de contratos (DTOs/Requests).</li>
+            <li>Revisiones de código y convenciones.</li>
+            <li>Principios SOLID y KISS/DRY/YAGNI.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Seguridad & metodología</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip">Auth (JWT/Session)</span><span class="chip">CSRF/CORS</span><span class="chip">Scrum/Kanban</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Autenticación y autorización por roles/policies.</li>
+            <li>Hardening básico (validación, rate limit, headers).</li>
+            <li>Gestión de tareas, sprints y documentación ligera.</li>
+            <li>Entrega continua y foco en DX.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Soluciones destacadas (no solo APIs) -->
+<section class="mt-5">
+  <h2 class="h4 mb-3">Soluciones destacadas</h2>
+  <div class="row g-3">
+
+    <div class="col-12 col-md-6">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Logística · Estados de envío</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">Backend</span><span class="chip">Frontend</span><span class="chip">Datos</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Listado con DataTables (server-side), filtros y exportación.</li>
+            <li>Cálculo de KPIs vía paquete PL/SQL y caché puntual.</li>
+            <li>UX con badges de estado y toasts de acción.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Packing List · Edición en línea</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">Frontend</span><span class="chip">Backend</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Edición inline (alto/ancho/prof./peso) con validaciones.</li>
+            <li>Autosave, control de concurrencia y mensajes de error claros.</li>
+            <li>Persistencia con reglas de negocio y auditoría de cambios.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Impresión ZPL · Plantillas dinámicas</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip">Backend</span><span class="chip">Integraciones</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Sistema unificado de impresión (Warehouse/Factory/Llegadas).</li>
+            <li>Plantillas en BBDD y selección por rol/vista.</li>
+            <li>Resolución de datos (artículo/lote) y validación previa.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">Ecommerce · F1Collector</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">Laravel</span><span class="chip">UI/UX</span><span class="chip">Pagos</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>Catálogo, filtros avanzados y wishlist con modales.</li>
+            <li>Auth Fortify, toasts de carrito y cupones/stripe en checkout.</li>
+            <li>Panel administrativo con roles y trazabilidad.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    </div>
+      <!-- Modal Confirmar Descarga CV -->
+  <div class="modal fade" id="confirmDownloadModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white border-0">
+        <div class="modal-header">
+          <h5 class="modal-title">Descargar CV</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          ¿Seguro que quieres descargar mi CV?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-cancel-download>Cancelar</button>
+          <button type="button" class="btn btn-primary" data-confirm-download>Sí, descargar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer py-4 mt-5 border-top">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <p class="mb-0 text-light-emphasis">&copy; 2025 Alberto Bernal</p>
+      <div class="d-flex gap-3">
+        <a href="https://github.com/AlbertoBernal02" class="text-light" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/alberto-bernal-mej%C3%ADas-b85903213/" class="text-light" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/albertxbernal/?hl=es" class="text-light" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

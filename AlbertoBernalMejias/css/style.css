@@ -1,0 +1,353 @@
+/* ===============================
+   Base · Tema oscuro + tokens
+=================================*/
+:root {
+  --bg-0: #0f1117;            /* fondo principal */
+  --bg-1: #121520;            /* panel/hero */
+  --text-0: #e8edf4;          /* texto */
+  --text-1: #b5c0d0;          /* texto secundario */
+  --primary: #0d6efd;
+  --primary-600: #0b5ed7;
+  --surface: #161a23;         /* cards */
+  --border: rgba(255,255,255,.08);
+  --ring: rgba(13,110,253,.35);
+  --shadow: 0 .75rem 2rem rgba(0,0,0,.35);
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 10% -10%, #1a2140 0%, transparent 60%),
+              radial-gradient(1200px 800px at 110% 10%, #142034 0%, transparent 55%),
+              var(--bg-0);
+  color: var(--text-0);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Después (usa colores de Bootstrap) */
+a { color: var(--bs-link-color); text-decoration: none; }
+a:hover { color: var(--bs-link-hover-color); }
+
+
+/* Utilidades */
+.text-light-emphasis { color: var(--text-1) !important; }
+.bg-gradient {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)),
+              radial-gradient(1000px 600px at 50% -20%, rgba(13,110,253,.20), transparent 60%),
+              var(--bg-1);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Reduce motion accesible */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ===============================
+   Navbar blur + pills
+=================================*/
+.navbar-blur {
+  background: rgba(17, 20, 26, 0.55);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--border);
+  transition: background .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.navbar-blur.scrolled {
+  background: rgba(17, 20, 26, .85);
+  box-shadow: var(--shadow);
+  border-color: rgba(255,255,255,.12);
+}
+.navbar-blur .nav-link {
+  color: #e9eef6;
+  opacity: .9;
+  border-radius: 999px;
+  padding-inline: .9rem;
+  transition: color .2s ease, background-color .2s ease, opacity .2s ease;
+  outline: none;
+}
+.navbar-blur .nav-link:hover,
+.navbar-blur .nav-link:focus {
+  color: #fff;
+  background: rgba(255,255,255,.08);
+  opacity: 1;
+}
+.navbar-blur .nav-link.active,
+.navbar-blur .nav-link[aria-current="page"] {
+  color: #fff;
+  background: rgba(13,110,253,.18);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+.navbar-toggler:focus { box-shadow: 0 0 0 .2rem rgba(13,110,253,.25); }
+
+/* CTA botón */
+.btn-cta {
+  border-radius: 999px;
+  padding: .5rem 1rem;
+  font-weight: 600;
+}
+
+/* ===============================
+   Hero
+=================================*/
+header.py-5 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+header .display-4 { letter-spacing: .2px; }
+header .btn.btn-outline-light {
+  border-color: rgba(255,255,255,.35);
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+header .btn.btn-outline-light:hover {
+  background: #fff; color: #111;
+}
+
+/* ===============================
+   Tarjetas de Tecnologías
+=================================*/
+.tech-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)) , var(--surface);
+  border: 1px solid var(--border) !important;
+  border-radius: 1rem;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+  will-change: transform;
+}
+.tech-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(13,110,253,.35) !important;
+  background: linear-gradient(180deg, rgba(13,110,253,.08), rgba(255,255,255,.01)) , var(--surface);
+}
+.tech-card .card-title { color: #fff; }
+.tech-card .card-text { color: var(--text-1); }
+.tech-card .card-img-top { width: 80px; height: 80px; object-fit: contain; }
+
+/* ===============================
+   Sección CTA CV
+=================================*/
+section.bg-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-600) 100%) !important;
+}
+section.bg-primary .btn.btn-light {
+  color: #111; font-weight: 600; border-radius: .75rem;
+}
+section.bg-primary .btn.btn-light:hover { filter: brightness(1.05); }
+
+/* ===============================
+   Footer
+=================================*/
+.footer {
+  background: transparent;
+  border-top: 1px solid var(--border);
+}
+.footer a {
+  color: var(--text-1);
+  transition: color .15s ease, opacity .15s ease;
+}
+.footer a:hover { color: #fff; opacity: 1; }
+
+/* ===============================
+   Imágenes y contenedores
+=================================*/
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: 1140px; }
+
+/* ===============================
+   Botones genéricos
+=================================*/
+.btn { border-radius: .75rem; }
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.btn-primary:hover { background: var(--primary-600); border-color: var(--primary-600); }
+
+/* ===============================
+   Overrides legacy (limpieza)
+   — Por si mantuviste partes antiguas
+=================================*/
+header.old, .carousel, .carousel-item, .carousel-img,
+.footer .nav-link, .rectangulo, .contact-button,
+.wrapper, .overlay, .proyectos-recientes, .proyecto { /* desactiva estilos antiguos si existen */
+  /* Intencionadamente vacío para evitar colisiones visuales */
+}
+
+/* ====== About page helpers ====== */
+
+/* Hero */
+.about-hero {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)),
+              radial-gradient(900px 500px at 20% -10%, rgba(13,110,253,.18), transparent 60%),
+              var(--bg-1);
+}
+
+/* Foto */
+.avatar-xl { width: 220px; height: 220px; }
+.object-fit-cover { object-fit: cover; }
+
+/* Definition list en grid */
+.dl-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: .5rem 1rem;
+  margin: 0;
+}
+.dl-grid dt {
+  color: var(--text-1);
+  font-weight: 600;
+}
+.dl-grid dd {
+  margin: 0;
+  word-break: break-word;
+}
+.dl-grid a { text-decoration: underline; text-underline-offset: 2px; }
+
+/* Chips de nivel */
+.chip {
+  display: inline-block;
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  font-size: .8rem;
+  color: #e8edf4;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.chip-strong {
+  background: rgba(13,110,253,.18);
+  border-color: rgba(13,110,253,.35);
+}
+
+/* Progreso moderno */
+.progress-modern {
+  background: rgba(255,255,255,.06);
+  border-radius: .75rem;
+  height: .9rem;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.progress-modern .progress-bar {
+  background: linear-gradient(90deg, rgba(13,110,253,1), rgba(13,110,253,.7));
+  font-size: .72rem;
+  line-height: .9rem;
+  font-weight: 600;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .dl-grid { grid-template-columns: 120px 1fr; }
+  .avatar-xl { width: 180px; height: 180px; }
+}
+/* Mapear nuestra paleta a Bootstrap cuando el tema es dark */
+:root,
+[data-bs-theme="dark"] {
+  --bs-body-bg: var(--bg-0);
+  --bs-body-color: var(--text-0);
+  --bs-border-color: var(--border);
+
+  /* Cards */
+  --bs-card-bg: var(--surface);
+  --bs-card-border-color: var(--border);
+  --bs-card-color: var(--text-0);
+
+  /* Enlaces Bootstrap */
+  --bs-link-color: #9ec5ff;           /* azul claro legible en dark */
+  --bs-link-hover-color: #cfe2ff;
+}
+.form-floating > .form-control,
+.form-floating > .form-select {
+  background-color: var(--surface);
+  border-color: var(--border);
+  color: var(--bs-body-color);
+}
+.form-floating > label { color: var(--text-1); }
+.form-control:focus, .form-select:focus {
+  border-color: rgba(13,110,253,.45);
+  box-shadow: 0 0 0 .2rem rgba(13,110,253,.25);
+}
+
+/* ====== Galería ====== */
+.project-card { overflow: hidden; }
+.project-media { height: 220px; }
+@media (min-width: 768px) { .project-media { height: 240px; } }
+@media (min-width: 1200px) { .project-media { height: 260px; } }
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.55));
+  opacity: 0;
+  transition: opacity .18s ease;
+  padding-bottom: .5rem;
+}
+.project-media:hover .project-overlay { opacity: 1; }
+
+/* Chips ya definidos, solo aseguramos tamaño en galería */
+.project-card .chip,
+.project-card .chip-strong { font-size: .75rem; padding: .2rem .55rem; }
+
+/* Proyecto destacado (TFG) */
+.project-featured {
+  border: 1px solid var(--border) !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)),
+    var(--surface);
+}
+.project-featured-media { min-height: 260px; }
+@media (min-width: 992px) { .project-featured-media { min-height: 100%; } }
+.project-featured .badge.bg-danger-subtle {
+  background: rgba(220, 53, 69, .25) !important;
+  border: 1px solid rgba(220,53,69,.45);
+}
+
+/* ===== Skills (iconos + etiquetas) ===== */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+  align-items: center;
+}
+.skill {
+  width: 90px;                 /* bloque compacto */
+  text-align: center;
+}
+.skill i {
+  font-size: 42px;             /* tamaño del icono */
+  line-height: 1;
+  display: block;
+}
+.skill span {
+  display: block;
+  margin-top: .4rem;
+  font-size: .8rem;
+  color: var(--text-1, #b5c0d0);
+}
+/* Asegura buen contraste para Symfony en tema oscuro */
+.skill i[class*="symfony"] { color: #fff; }
+
+/* Badges para JSON/XML si no hay icono de marca */
+.file-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: .6rem;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .5px;
+  color: #e8edf4;
+}
+
+/* Modo oscuro coherente si no tienes variables */
+[data-bs-theme="dark"] .skill span { color: var(--text-1, #b5c0d0); }
+
+/* Ajustes responsivos */
+@media (max-width: 480px) {
+  .skill { width: 76px; }
+  .skill i { font-size: 36px; }
+  .file-badge { width: 38px; height: 38px; font-size: .8rem; }
+}

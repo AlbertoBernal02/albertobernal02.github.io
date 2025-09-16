@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Galería — Alberto Bernal</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/bootstrap.bundle.js" defer></script>
+    <script src="js/js.js" defer></script>
+    <link rel="icon" href="img/faviconact.webp" type="image/x-icon" />
+  </head>
+
+  <body data-bs-theme="dark">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-blur sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="img/faviconact.webp" width="28" height="28" alt="" class="rounded-2">
+          <span class="fw-semibold">Alberto Bernal</span>
+        </a>
+        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="index.html" data-nav="index">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="gallery.html" data-nav="gallery" aria-current="page">Galería</a></li>
+            <li class="nav-item"><a class="nav-link" href="aboutme.html" data-nav="aboutme">Sobre mí</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html" data-nav="contact">Contacto</a></li>
+          </ul>
+          <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
+            <a href="img/CVABM.pdf" download="CV_AlbertoBernal.pdf" class="btn btn-primary btn-cta">Descargar CV</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="py-5 bg-gradient border-bottom text-center">
+      <div class="container">
+        <h1 class="fw-bold mb-2">Mis proyectos</h1>
+        <p class="text-light-emphasis mb-0">Selección de trabajos en Java, PHP/Laravel, SQL y Frontend.</p>
+      </div>
+    </header>
+
+    <!-- DESTACADO · TFG -->
+    <section class="py-2">
+      <div class="container">
+        <article class="card border-0 tech-card project-featured overflow-hidden">
+          <div class="row g-0 align-items-stretch">
+            <div class="col-12 col-lg-6">
+              <div class="project-featured-media h-100 position-relative">
+                <!-- Usa una imagen tuya: crea img/f1collector-hero.jpg -->
+                <img src="img/F1Collector.png" alt="F1Collector — Tienda de coches a escala de F1"
+                    class="w-100 h-100 object-fit-cover">
+                <span class="badge bg-danger-subtle text-white position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2">
+                  ⭐ TFG
+                </span>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="card-body p-4 p-lg-5 d-flex flex-column h-100">
+                <h2 class="h3 mb-2">F1Collector — Coches a Escala de Fórmula 1</h2>
+                <p class="text-light-emphasis mb-3">
+                  Tienda online para coleccionistas de F1 con catálogo, filtros avanzados (escudería, piloto, temporada),
+                  carrito y gestión de pedidos, perfiles de usuario y panel admin. UI responsiva.
+                </p>
+                <ul class="text-light-emphasis small mb-4">
+                  <li><strong>Backend:</strong> Laravel (auth, policies, mail, colas), PHP 8, REST.</li>
+                  <li><strong>Frontend:</strong> Bootstrap/Tailwind, JS modular, componentes.</li>
+                  <li><strong>Datos:</strong> MySQL/SQL, Eloquent, seeds, migraciones.</li>
+                  <li><strong>Extra:</strong> Wishlist, modales login/registro, toasts de carrito, descuento bienvenida.</li>
+                </ul>
+                <div class="d-flex gap-2 flex-wrap mb-4">
+                  <span class="chip chip-strong">PHP</span>
+                  <span class="chip chip-strong">Laravel</span>
+                  <span class="chip">SQL</span>
+                  <span class="chip">Bootstrap</span>
+                  <span class="chip">Tailwind</span>
+                  <span class="chip">JavaScript</span>
+                </div>
+                <div class="mt-auto d-flex flex-wrap gap-2">
+                  <a class="btn btn-primary" href="https://github.com/Juliogarort/F1Collector" target="_blank" rel="noopener">Ver código</a>
+                  <button class="btn btn-outline-light" data-lightbox="img/F1Collector.png" data-title="F1Collector — Vista previa">Ver imagen</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="py-4">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <button class="btn btn-outline-light btn-sm rounded-pill active" data-filter="all">Todos</button>
+          <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="symfony">Symfony</button>
+          <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="php">PHP / Laravel</button>
+          <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="java">Java</button>
+          <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="sql">SQL</button>
+          <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="frontend">Frontend</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- GRID DE PROYECTOS -->
+    <main class="py-2">
+      <div class="container">
+        <div class="row g-4" id="projectsGrid">
+          <!-- Proyecto: AlbertNBF -->
+          <div class="col-12 col-sm-6 col-lg-4" data-tech="frontend php symfony">
+            <article class="card project-card h-100 border-0 tech-card">
+              <div class="project-media position-relative">
+                <img
+                  src="img/FotoAlbertNBF.png"
+                  class="w-100 h-100 object-fit-cover rounded-top"
+                  alt="AlbertNBF"
+                  width="600" height="360"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="d-flex gap-2">
+                    <a class="btn btn-sm btn-light" href="https://github.com/AlbertoBernal02/AlbertNBF" target="_blank" rel="noopener">Código</a>
+                    <button class="btn btn-sm btn-outline-light" data-lightbox="img/FotoAlbertNBF.png" data-title="AlbertNBF — Vista previa">Ver imagen</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 mb-1">AlbertNBF</h3>
+                <p class="text-light-emphasis small mb-2">Proyecto personal con enfoque en buenas prácticas y UI moderna.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="chip chip-strong">Symfony</span>
+                  <span class="chip">PHP</span>
+                  <span class="chip">Frontend</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Proyecto: Mesa YA (Laravel) -->
+          <div class="col-12 col-sm-6 col-lg-4" data-tech="php laravel sql frontend">
+            <article class="card project-card h-100 border-0 tech-card">
+              <div class="project-media position-relative">
+                <img
+                  src="img/logomesaya.png"
+                  class="w-100 h-100 object-fit-cover rounded-top"
+                  alt="Mesa YA — Reservas de restaurantes"
+                  width="600" height="360"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="d-flex gap-2">
+                    <a class="btn btn-sm btn-light" href="https://github.com/AlbertoBernal02/MesaYA" target="_blank" rel="noopener">Código</a>
+                    <button class="btn btn-sm btn-outline-light" data-lightbox="img/logomesaya.png" data-title="Mesa YA — Vista previa">Ver imagen</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 mb-1">Mesa YA</h3>
+                <p class="text-light-emphasis small mb-2">
+                  Reservas de mesa en restaurantes: disponibilidad por franja, autenticación, panel admin y gestión de horarios.
+                </p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="chip chip-strong">Laravel</span>
+                  <span class="chip">PHP</span>
+                  <span class="chip">SQL</span>
+                  <span class="chip">Frontend</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Proyecto: F1 Manager (Java, Frontend) -->
+          <div class="col-12 col-sm-6 col-lg-4" data-tech="java frontend">
+            <article class="card project-card h-100 border-0 tech-card">
+              <div class="project-media position-relative">
+                <img
+                  src="img/f1madm.png"
+                  class="w-100 h-100 object-fit-cover rounded-top"
+                  alt="F1 Manager"
+                  width="600" height="360"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="d-flex gap-2">
+                    <a class="btn btn-sm btn-light" href="https://github.com/Juliogarort/F1-Manager.git" target="_blank" rel="noopener">Código</a>
+                    <button class="btn btn-sm btn-outline-light" data-lightbox="img/f1madm.png" data-title="F1 Manager">Ver imagen</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 mb-1">F1 Manager</h3>
+                <p class="text-light-emphasis small mb-2">Gestor de escuderías F1. Java + UI.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="chip chip-strong">Java</span>
+                  <span class="chip">Frontend</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Proyecto: Juego Digimon Java (Java, Frontend) -->
+          <div class="col-12 col-sm-6 col-lg-4" data-tech="java frontend">
+            <article class="card project-card h-100 border-0 tech-card">
+              <div class="project-media position-relative">
+                <img
+                  src="img/dgm.png"
+                  class="w-100 h-100 object-fit-cover rounded-top"
+                  alt="Juego Digimon Java"
+                  width="600" height="360"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="d-flex gap-2">
+                    <a class="btn btn-sm btn-light" href="https://github.com/AlbertoBernal02/Practica-Final-Entornos.git" target="_blank" rel="noopener">Código</a>
+                    <button class="btn btn-sm btn-outline-light" data-lightbox="img/dgm.png" data-title="Digimon (Java)">Ver imagen</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 mb-1">Juego Digimon (Java)</h3>
+                <p class="text-light-emphasis small mb-2">Práctica final con lógica y combate.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="chip chip-strong">Java</span>
+                  <span class="chip">Frontend</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Proyecto: Web IlernaQuiz (Frontend, JavaScript) -->
+          <div class="col-12 col-sm-6 col-lg-4" data-tech="frontend">
+            <article class="card project-card h-100 border-0 tech-card">
+              <div class="project-media position-relative">
+                <img
+                  src="img/ILQ.png"
+                  class="w-100 h-100 object-fit-cover rounded-top"
+                  alt="Web IlernaQuiz"
+                  width="600" height="360"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="d-flex gap-2">
+                    <a class="btn btn-sm btn-light" href="https://github.com/AlbertoBernal02/Web-IlernaQuiz.git" target="_blank" rel="noopener">Código</a>
+                    <button class="btn btn-sm btn-outline-light" data-lightbox="img/ILQ.png" data-title="Web IlernaQuiz">Ver imagen</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 mb-1">Web IlernaQuiz</h3>
+                <p class="text-light-emphasis small mb-2">Quiz web con UI responsiva.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="chip">Frontend</span>
+                  <span class="chip">JavaScript</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Proyecto: Ilerna Quiz Juego (Frontend, JavaScript) -->
+          <div class="col-12 col-sm-6 col-lg-4" data-tech="frontend">
+            <article class="card project-card h-100 border-0 tech-card">
+              <div class="project-media position-relative">
+                <img
+                  src="img/ilquizjuego.png"
+                  class="w-100 h-100 object-fit-cover rounded-top"
+                  alt="Ilerna Quiz Juego"
+                  width="600" height="360"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="d-flex gap-2">
+                    <a class="btn btn-sm btn-light" href="https://github.com/AlbertoBernal02/IlernaQuiz.git" target="_blank" rel="noopener">Código</a>
+                    <button class="btn btn-sm btn-outline-light" data-lightbox="img/ilquizjuego.png" data-title="Ilerna Quiz Juego">Ver imagen</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 mb-1">Ilerna Quiz — Juego</h3>
+                <p class="text-light-emphasis small mb-2">Juego tipo quiz con JS.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="chip">Frontend</span>
+                  <span class="chip">JavaScript</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+
+        </div>
+
+        <!-- CTA ver más -->
+        <div class="text-center mt-4">
+          <a href="https://github.com/AlbertoBernal02" target="_blank" rel="noopener" class="btn btn-outline-light">
+            Ver más proyectos
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- MODAL LIGHTBOX -->
+    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-dark text-white border-0">
+          <div class="modal-header">
+            <h5 class="modal-title" id="lightboxTitle">Vista previa</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body p-0">
+            <img id="lightboxImg" src="" alt="" class="w-100 h-auto d-block rounded-bottom">
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Modal Confirmar Descarga CV -->
+  <div class="modal fade" id="confirmDownloadModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white border-0">
+        <div class="modal-header">
+          <h5 class="modal-title">Descargar CV</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          ¿Seguro que quieres descargar mi CV?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-cancel-download>Cancelar</button>
+          <button type="button" class="btn btn-primary" data-confirm-download>Sí, descargar</button>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="footer py-4 mt-5 border-top">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <p class="mb-0 text-light-emphasis">&copy; 2025 Alberto Bernal</p>
+        <div class="d-flex gap-3">
+          <a href="https://github.com/AlbertoBernal02" class="text-light" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/alberto-bernal-mej%C3%ADas-b85903213/" class="text-light" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/albertxbernal/?hl=es" class="text-light" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

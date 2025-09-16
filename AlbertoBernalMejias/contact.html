@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto — Alberto Bernal</title>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/bootstrap.bundle.js" defer></script>
+  <script src="js/js.js" defer></script>
+  <link rel="icon" href="img/faviconact.webp" type="image/x-icon" />
+</head>
+
+<body data-bs-theme="dark">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-blur sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="img/faviconact.webp" width="28" height="28" alt="" class="rounded-2">
+        <span class="fw-semibold">Alberto Bernal</span>
+      </a>
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-nav="index">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html" data-nav="gallery">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutme.html" data-nav="aboutme">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html" data-nav="contact" aria-current="page">Contacto</a></li>
+        </ul>
+        <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
+          <a href="img/CVABM.pdf" download="CV_AlbertoBernal.pdf" class="btn btn-primary btn-cta">Descargar CV</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="py-5 bg-gradient border-bottom">
+    <div class="container text-center">
+      <h1 class="fw-bold">Hablemos</h1>
+      <p class="text-light-emphasis mb-0">Cuéntame tu idea, colaboración u oportunidad.</p>
+    </div>
+  </header>
+
+  <!-- FORMULARIO -->
+  <main class="py-5">
+    <div class="container">
+      <form id="contactForm" class="mx-auto" style="max-width: 720px;" novalidate>
+        <!-- Honeypot anti-spam (oculto para personas) -->
+        <input type="text" name="company" id="company" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Tu nombre" required minlength="2" maxlength="60">
+              <label for="name">Nombre</label>
+              <div class="invalid-feedback">Introduce tu nombre (mín. 2 caracteres).</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Tus apellidos" required minlength="2" maxlength="80">
+              <label for="lastname">Apellidos</label>
+              <div class="invalid-feedback">Introduce tus apellidos.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <fieldset class="p-3 border rounded-3">
+              <legend class="float-none w-auto px-2 fs-6 mb-2 text-light-emphasis">Sexo</legend>
+              <div class="d-flex flex-wrap gap-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                  <label class="form-check-label" for="male">Hombre</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                  <label class="form-check-label" for="female">Mujer</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="prefer_not_say" value="prefer_not_say" required>
+                  <label class="form-check-label" for="prefer_not_say">Prefiero no decirlo</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required inputmode="email" autocomplete="email">
+              <label for="email">Email</label>
+              <div class="invalid-feedback">Introduce un email válido.</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-floating">
+              <select id="reason" name="reason" class="form-select" required aria-label="Motivo de la consulta">
+                <option value="" selected disabled>Selecciona un motivo</option>
+                <option value="recomendacion_amigo">Recomendación de un amigo</option>
+                <option value="empleo">Oportunidad de empleo</option>
+                <option value="colaboracion">Colaboración</option>
+                <option value="consulta_general">Consulta general</option>
+                <option value="nuevo_proyecto">Nuevo proyecto</option>
+                <option value="feedback">Feedback</option>
+                <option value="otros">Otros</option>
+              </select>
+              <label for="reason">Motivo</label>
+              <div class="invalid-feedback">Selecciona un motivo.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-floating">
+              <textarea class="form-control" id="comments" name="comments" placeholder="Tu mensaje" required rows="5" minlength="10" maxlength="1000" style="height: 160px;"></textarea>
+              <label for="comments">Mensaje</label>
+              <div class="d-flex justify-content-between">
+                <div class="invalid-feedback">Cuéntame un poco más (mín. 10 caracteres).</div>
+                <small id="commentsCounter" class="text-light-emphasis ms-auto mt-1">0 / 1000</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+              <label class="form-check-label" for="terms">
+                He leído y acepto los <a href="#" class="terms-link">términos y condiciones</a>.
+              </label>
+              <div class="invalid-feedback">Debes aceptar los términos.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="subscribe" name="subscribe">
+              <label class="form-check-label" for="subscribe">Acepto ser contactado por email para futuras comunicaciones.</label>
+            </div>
+          </div>
+
+          <div class="col-12 text-center mt-2">
+            <button type="submit" class="btn btn-lg btn-primary px-4">Enviar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Modal de éxito -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white border-0">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">¡Gracias!</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          Tu mensaje se ha enviado correctamente. Te responderé lo antes posible.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal" id="closeModalBtn">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Modal Confirmar Descarga CV -->
+  <div class="modal fade" id="confirmDownloadModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white border-0">
+        <div class="modal-header">
+          <h5 class="modal-title">Descargar CV</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          ¿Seguro que quieres descargar mi CV?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-cancel-download>Cancelar</button>
+          <button type="button" class="btn btn-primary" data-confirm-download>Sí, descargar</button>
+        </div>
+      </div>
+    </div>
+  <!-- FOOTER -->
+  <footer class="footer py-4 mt-5 border-top">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <p class="mb-0 text-light-emphasis">&copy; 2025 Alberto Bernal</p>
+      <div class="d-flex gap-3">
+        <a href="https://github.com/AlbertoBernal02" class="text-light" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/alberto-bernal-mej%C3%ADas-b85903213/" class="text-light" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/albertxbernal/?hl=es" class="text-light" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
