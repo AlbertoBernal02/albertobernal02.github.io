@@ -299,31 +299,102 @@ function initGalleryFilters() {
   });
 }
 
-// Lightbox usando modal Bootstrap
+// Lightbox usando modal Bootstrap + Carousel (galería)
 function initLightbox() {
-  const modalEl = document.getElementById('lightboxModal');
-  if (!modalEl) return;
+  const modalEl = document.getElementById("lightboxModal");
+  if (!modalEl || !window.bootstrap?.Modal) return;
 
-  const imgEl = modalEl.querySelector('#lightboxImg');
-  const titleEl = modalEl.querySelector('#lightboxTitle');
-  const modal = window.bootstrap?.Modal ? bootstrap.Modal.getOrCreateInstance(modalEl) : null;
+  const titleEl = modalEl.querySelector("#lightboxTitle");
+  const innerEl = modalEl.querySelector("#lightboxInner");
+  const indicatorsEl = modalEl.querySelector("#lightboxIndicators");
+  const carouselEl = modalEl.querySelector("#lightboxCarousel");
 
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-lightbox]');
+  const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+
+  let carouselInstance = null;
+
+  const buildCarousel = (images) => {
+    innerEl.innerHTML = "";
+    indicatorsEl.innerHTML = "";
+
+    images.forEach((src, i) => {
+      // slide
+      const item = document.createElement("div");
+      item.className = `carousel-item ${i === 0 ? "active" : ""}`;
+      item.innerHTML = `
+        <img src="${src}" class="d-block w-100" alt="" style="max-height: 80vh; object-fit: contain;">
+      `;
+      innerEl.appendChild(item);
+
+      // indicator
+      const ind = document.createElement("button");
+      ind.type = "button";
+      ind.setAttribute("data-bs-target", "#lightboxCarousel");
+      ind.setAttribute("data-bs-slide-to", String(i));
+      ind.className = i === 0 ? "active" : "";
+      ind.ariaCurrent = i === 0 ? "true" : "false";
+      ind.setAttribute("aria-label", `Slide ${i + 1}`);
+      indicatorsEl.appendChild(ind);
+    });
+
+    // Reinicia carrusel al primer slide
+    if (carouselInstance) carouselInstance.dispose();
+    carouselInstance = bootstrap.Carousel.getOrCreateInstance(carouselEl, {
+      interval: false,
+      ride: false,
+      touch: true,
+      wrap: true
+    });
+    carouselInstance.to(0);
+
+    // Oculta flechas si solo hay 1 imagen
+    const prevBtn = modalEl.querySelector(".carousel-control-prev");
+    const nextBtn = modalEl.querySelector(".carousel-control-next");
+    const showControls = images.length > 1;
+    prevBtn.style.display = showControls ? "" : "none";
+    nextBtn.style.display = showControls ? "" : "none";
+    indicatorsEl.style.display = showControls ? "" : "none";
+  };
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-gallery], [data-lightbox]");
     if (!btn) return;
-    const src = btn.getAttribute('data-lightbox');
-    const title = btn.getAttribute('data-title') || 'Vista previa';
-    if (src && modal) {
-      imgEl.src = src;
-      imgEl.alt = title;
-      titleEl.textContent = title;
+
+    const title = btn.getAttribute("data-title") || "Vista previa";
+    titleEl.textContent = title;
+
+    // ✅ Nuevo: data-gallery con array
+    const galleryRaw = btn.getAttribute("data-gallery");
+    if (galleryRaw) {
+      try {
+        const images = JSON.parse(galleryRaw).filter(Boolean);
+        if (images.length) {
+          buildCarousel(images);
+          modal.show();
+        }
+      } catch {
+        // Si el JSON está mal, no hace nada (evitas romper la página)
+      }
+      return;
+    }
+
+    // ✅ Compatibilidad con tu sistema actual: data-lightbox con 1 imagen
+    const single = btn.getAttribute("data-lightbox");
+    if (single) {
+      buildCarousel([single]);
       modal.show();
     }
   });
 
-  // Limpia imagen al cerrar
-  modalEl.addEventListener('hidden.bs.modal', () => {
-    imgEl.src = '';
-    imgEl.alt = '';
+  // Limpieza al cerrar
+  modalEl.addEventListener("hidden.bs.modal", () => {
+    innerEl.innerHTML = "";
+    indicatorsEl.innerHTML = "";
+    titleEl.textContent = "Vista previa";
+    if (carouselInstance) {
+      carouselInstance.dispose();
+      carouselInstance = null;
+    }
   });
 }
+

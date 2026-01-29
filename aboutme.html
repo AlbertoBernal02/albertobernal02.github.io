@@ -61,8 +61,9 @@
         <div class="col-12 col-md-8">
           <h1 class="display-5 fw-bold mb-2">Sobre mí</h1>
           <p class="lead text-light-emphasis mb-4">
-            Soy <strong>Desarrollador Web</strong> especializado en <strong>APIs y backend</strong> con Java y SQL, orientado a
-            código escalable, mantenible y limpio (principios <em>SOLID</em>). Me encanta construir productos robustos que la gente disfrute usando.
+            Soy <strong>Desarrollador Web Full Stack</strong> con foco en <strong>backend y APIs</strong> (Symfony/Laravel, Java, SQL) y
+            frontend moderno con <strong>React</strong>. Construyo productos con <strong>auth (login/registro)</strong>, CRUDs completos,
+            validaciones, <strong>toasts</strong> y UI cuidada, buscando siempre código <em>limpio</em>, mantenible y escalable (SOLID).
           </p>
           <div class="d-flex flex-wrap gap-2">
             <a class="btn btn-light" href="img/CVABM.pdf" download="CV_AlbertoBernal.pdf">Descargar CV</a>
@@ -87,7 +88,7 @@
               <h2 class="h4 mb-3">Datos personales</h2>
               <dl class="dl-grid">
                 <dt>Nombre</dt>     <dd>Alberto Bernal Mejías</dd>
-                <dt>Título</dt>     <dd>Desarrollador Web</dd>
+                <dt>Título</dt>     <dd>Desarrollador Web Full Stack</dd>
                 <dt>Teléfono</dt>   <dd><a href="tel:+34692329148">+34 692 329 148</a></dd>
                 <dt>Email</dt>      <dd><a href="mailto:abernalmejias@hotmail.com">abernalmejias@hotmail.com</a></dd>
                 <dt>Website</dt>    <dd><a href="https://www.linkedin.com/in/alberto-bernal-mej%C3%ADas-b85903213/" target="_blank" rel="noopener">linkedin.com/in/alberto-bernal-mejias</a></dd>
@@ -103,9 +104,12 @@
             <div class="card-body">
               <h2 class="h4 mb-3">Quién soy</h2>
               <p class="mb-0 text-light-emphasis">
-                Técnico Superior en Desarrollo de Aplicaciones Web. Trabajo con <strong>PHP (Symfony/Laravel)</strong>, <strong>Java</strong>, <strong>SQL</strong>, <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>.
-                Me enfoco en <strong>diseño e implementación de APIs REST</strong>, <strong>servicios backend</strong> y <strong>optimización de base de datos</strong> (Oracle, MySQL).
-                Disfruto crear soluciones escalables y mantenibles aplicando <em>SOLID</em>, con especial cuidado en rendimiento y DX.
+                Técnico Superior en Desarrollo de Aplicaciones Web. Trabajo con <strong>PHP (Symfony/Laravel)</strong>, <strong>Java</strong>,
+                <strong>SQL (Oracle/MySQL)</strong>, <strong>HTML/CSS</strong> y <strong>JavaScript</strong>, y actualmente desarrollo también con
+                <strong>React</strong>.
+                Me especializo en <strong>APIs REST</strong>, servicios backend y optimización de base de datos, pero también creo interfaces modernas
+                con <strong>autenticación</strong> (login/registro), <strong>CRUD</strong>, filtros y notificaciones con <strong>toasts</strong>.
+                Me importa mucho el rendimiento, la experiencia de usuario y la calidad del código.
               </p>
             </div>
           </div>
@@ -128,6 +132,24 @@
                 <p class="text-light-emphasis mb-2">APIs REST, controladores, middleware, autenticación, servicios, colas y arquitectura limpia.</p>
                 <div class="progress progress-modern" role="progressbar" aria-label="Nivel PHP Symfony/Laravel" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
                   <div class="progress-bar" style="width: 85%">85%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- React -->
+          <div class="col">
+            <div class="card bg-dark border-0 tech-card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h3 class="h6 mb-0">React</h3>
+                  <span class="chip">Intermedio</span>
+                </div>
+                <p class="text-light-emphasis mb-2">
+                  CRUDs completos, componentes reutilizables, formularios con validación, auth y UX con toasts.
+                </p>
+                <div class="progress progress-modern" role="progressbar" aria-label="Nivel React" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" style="width: 65%">65%</div>
                 </div>
               </div>
             </div>
@@ -250,6 +272,7 @@
             <li>Componentes reutilizables, modales y formularios “floating”.</li>
             <li>Fetch API, control de estado ligero y toasts/notificaciones.</li>
             <li>Buenas prácticas de rendimiento (lazy, minificación, cache).</li>
+            <li>CRUDs en React con login/registro, validaciones y toasts (UX “app-like”).</li>
           </ul>
         </div>
       </div>
@@ -318,6 +341,7 @@
             <li>Hardening básico (validación, rate limit, headers).</li>
             <li>Gestión de tareas, sprints y documentación ligera.</li>
             <li>Entrega continua y foco en DX.</li>
+            <li>Flujos de autenticación (login/registro), roles y control de acceso.</li>
           </ul>
         </div>
       </div>
@@ -342,6 +366,21 @@
             <li>Listado con DataTables (server-side), filtros y exportación.</li>
             <li>Cálculo de KPIs vía paquete PL/SQL y caché puntual.</li>
             <li>UX con badges de estado y toasts de acción.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="card bg-dark border-0 tech-card h-100">
+        <div class="card-body">
+          <h3 class="h6 mb-2">React CRUD · Auth + MySQL</h3>
+          <div class="d-flex gap-2 flex-wrap mb-2">
+            <span class="chip chip-strong">React</span><span class="chip">MySQL</span><span class="chip">Auth</span><span class="chip">Toasts</span>
+          </div>
+          <ul class="text-light-emphasis mb-0">
+            <li>CRUD completo con búsqueda/filtros, acciones rápidas y UI moderna.</li>
+            <li>Login/registro conectado a BBDD y validaciones en formularios.</li>
+            <li>Feedback inmediato con toasts y experiencia tipo “aplicación”.</li>
           </ul>
         </div>
       </div>

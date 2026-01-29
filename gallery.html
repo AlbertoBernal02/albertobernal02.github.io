@@ -98,6 +98,8 @@
           <button class="btn btn-outline-light btn-sm rounded-pill active" data-filter="all">Todos</button>
           <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="symfony">Symfony</button>
           <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="php">PHP / Laravel</button>
+          <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="react">React</button>
+          <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="angular">Angular</button>
           <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="java">Java</button>
           <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="sql">SQL</button>
           <button class="btn btn-outline-light btn-sm rounded-pill" data-filter="frontend">Frontend</button>
@@ -139,6 +141,62 @@
             </article>
           </div>
 
+          <!-- Proyecto: Products CRUD (Angular + API + MySQL) -->
+          <div class="col-12 col-sm-6 col-lg-4" data-tech="frontend angular sql">
+            <article class="card project-card h-100 border-0 tech-card">
+              <div class="project-media position-relative">
+                <img
+                  src="img/angularimg.png"
+                  class="w-100 h-100 object-fit-cover rounded-top"
+                  alt="Products CRUD — Angular + API + MySQL"
+                  width="600" height="360"
+                  loading="lazy"
+                />
+
+                <div class="project-overlay">
+                  <div class="d-flex gap-2">
+                    <!-- Cambia el link a tu repo real cuando lo subas -->
+                    <a class="btn btn-sm btn-light" href="https://github.com/AlbertoBernal02" target="_blank" rel="noopener">Código</a>
+                    <button
+                      class="btn btn-sm btn-outline-light"
+                      data-gallery='["img/angularimg.png", "img/crearancuñar.png", "img/angulareditar.png"]'
+                      data-title="Products CRUD — Angular + API + MySQL"
+                    >
+                      Ver imagen
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <h3 class="h6 mb-1">Products CRUD — Angular + MySQL</h3>
+
+                <p class="text-light-emphasis small mb-2">
+                  CRUD completo de productos desarrollado con <strong>Angular (última versión)</strong> y
+                  <strong>formularios reactivos</strong> (validaciones en tiempo real). Conexión a
+                  <strong>MySQL</strong> mediante una <strong>API REST</strong> propia en <strong>Node/Express</strong>
+                  (GET/POST/PUT/DELETE). Interfaz limpia tipo dashboard con acciones rápidas, persistencia real
+                  y código modular orientado a buenas prácticas.
+                </p>
+
+                <ul class="text-light-emphasis small mb-3 ps-3">
+                  <li><strong>Frontend:</strong> Angular Standalone Components + Reactive Forms.</li>
+                  <li><strong>Backend:</strong> Express REST API + CORS + dotenv.</li>
+                  <li><strong>BBDD:</strong> MySQL con persistencia y operaciones CRUD reales.</li>
+                </ul>
+
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="chip chip-strong">Angular</span>
+                  <span class="chip">REST API</span>
+                  <span class="chip">Node/Express</span>
+                  <span class="chip">MySQL</span>
+                  <span class="chip">CRUD</span>
+                  <span class="chip">Reactive Forms</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
           <!-- Proyecto: Mesa YA (Laravel) -->
           <div class="col-12 col-sm-6 col-lg-4" data-tech="php laravel sql frontend">
             <article class="card project-card h-100 border-0 tech-card">
@@ -167,6 +225,50 @@
                   <span class="chip">PHP</span>
                   <span class="chip">SQL</span>
                   <span class="chip">Frontend</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Proyecto: Fruits CRUD (React + MySQL + Auth) -->
+          <div class="col-12 col-sm-6 col-lg-4" data-tech="react frontend sql">
+            <article class="card project-card h-100 border-0 tech-card">
+              <div class="project-media position-relative">
+                <img
+                  src="img/crudreact.png"
+                  class="w-100 h-100 object-fit-cover rounded-top"
+                  alt="Fruits CRUD — React + MySQL + Auth"
+                  width="600" height="360"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="d-flex gap-2">
+                    <!-- Pon aquí tu repo real si lo tienes -->
+                    <a class="btn btn-sm btn-light" href="https://github.com/AlbertoBernal02" target="_blank" rel="noopener">Código</a>
+                      <button
+                        class="btn btn-sm btn-outline-light"
+                        data-gallery='["img/crudreact.png"]'
+                        data-title="Fruits CRUD — React + MySQL + Auth"
+                      >
+                        Ver imagen
+                      </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 mb-1">Fruits CRUD — React + MySQL</h3>
+                <p class="text-light-emphasis small mb-2">
+                  CRUD completo con <strong>login/registro</strong>, validaciones y <strong>toasts</strong>.
+                  Gestión de datos en <strong>MySQL</strong> con interfaz moderna, filtros y acciones rápidas (editar/borrar).
+                  Enfocado a <strong>buenas prácticas</strong>, UX limpia y código mantenible.
+                </p>
+
+                <div class="d-flex gap-2 flex-wrap">
+                  <span class="chip chip-strong">React</span>
+                  <span class="chip">MySQL</span>
+                  <span class="chip">CRUD</span>
+                  <span class="chip">Auth</span>
+                  <span class="chip">Toasts</span>
                 </div>
               </div>
             </article>
@@ -300,20 +402,35 @@
       </div>
     </main>
 
-    <!-- MODAL LIGHTBOX -->
-    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content bg-dark text-white border-0">
-          <div class="modal-header">
-            <h5 class="modal-title" id="lightboxTitle">Vista previa</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-          </div>
-          <div class="modal-body p-0">
-            <img id="lightboxImg" src="" alt="" class="w-100 h-auto d-block rounded-bottom">
-          </div>
+<!-- MODAL LIGHTBOX (con carrusel) -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-dark text-white border-0">
+      <div class="modal-header">
+        <h5 class="modal-title" id="lightboxTitle">Vista previa</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body p-0">
+        <div id="lightboxCarousel" class="carousel slide" data-bs-ride="false" data-bs-touch="true">
+          <div class="carousel-indicators" id="lightboxIndicators"></div>
+
+          <div class="carousel-inner" id="lightboxInner"></div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
       <!-- Modal Confirmar Descarga CV -->
   <div class="modal fade" id="confirmDownloadModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

@@ -351,3 +351,37 @@ header.old, .carousel, .carousel-item, .carousel-img,
   .skill i { font-size: 36px; }
   .file-badge { width: 38px; height: 38px; font-size: .8rem; }
 }
+
+.skill-icon-img {
+  height: 55px;        /* MISMA altura que los iconos */
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.skill-icon-img2 {
+  height: 45px;        /* MISMA altura que los iconos */
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== Lightbox Carousel (iconos blancos) ===== */
+#lightboxModal .carousel-control-prev-icon,
+#lightboxModal .carousel-control-next-icon {
+  filter: invert(1) grayscale(100%);
+  opacity: 0.95;
+}
+
+#lightboxModal .carousel-indicators [data-bs-target] {
+  background-color: #fff;
+  opacity: 0.6;
+}
+
+#lightboxModal .carousel-indicators .active {
+  opacity: 1;
+}
+#lightboxModal .carousel-control-prev:hover,
+#lightboxModal .carousel-control-next:hover {
+  background: rgba(255,255,255,0.08);
+}
